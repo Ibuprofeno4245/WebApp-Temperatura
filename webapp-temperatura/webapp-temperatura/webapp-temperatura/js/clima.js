@@ -8,6 +8,7 @@ function getClima() {
         success: function (data) {
             console.log (data.weather[0].description);
 
+            
             let converterCelcius = (data.main.temp - 273.15);
             celsius = (Math.round(converterCelcius) + "C°")
 
