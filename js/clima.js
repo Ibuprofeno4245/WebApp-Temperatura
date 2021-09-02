@@ -14,7 +14,7 @@ function getClima() {
 
             $('#temperatura').html(celsius);
             $('#condicao').html(data.weather[0].description);
-            $('#velocidade').html(data.wind.speed+'km/h');
+            $('#velocidade').html(data.wind.speed+'m/s');
             $('#umidade').html(data.main.humidity+'%');
             $('#dia').html(data.sys.sunrise);
             $('#noite').html(data.sys.sunset);
