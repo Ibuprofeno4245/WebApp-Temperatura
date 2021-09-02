@@ -38,8 +38,8 @@ function plotarResultados(data) {
 
 function getDadosClima() {
     let tempoAtual = new Date().getTime();
-    let tempoCache = parseInt(localStorage.alteracaoCache)
-    let diferencaTempos
+    let tempoCache = parseInt(localStorage.alteracaoCache);
+    let diferencaTempos = tempoAtual - tempoCache;
     
     if (diferencaTempos > 300000) {
         getClima();
@@ -52,6 +52,6 @@ function getDadosClima() {
 
 window.onload = function () {
 
-    getClima();
+    getDadosClima();
 
 };
