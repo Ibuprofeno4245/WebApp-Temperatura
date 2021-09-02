@@ -18,6 +18,7 @@ function getClima() {
     });
 }
 
+
 function plotarResultados(data) {
     console.log (data.weather[0].description);
 
@@ -33,7 +34,20 @@ function plotarResultados(data) {
 
         let icone = 'img/' + data.weather[0].icon + '.png';
         $('#i_condicao').attr('src',icone);
-s
+}
+
+function getDadosClima() {
+    let tempoAtual = new Date().getTime();
+    let tempoCache = parseInt(localStorage.alteracaoCache)
+    let diferencaTempos
+    
+    if (diferencaTempos > 300000) {
+        getClima();
+    } else {
+        let data = JSON.parse(localStorage.clima);
+        plotarResultados(data);
+    }
+
 }
 
 window.onload = function () {
